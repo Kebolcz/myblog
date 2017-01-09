@@ -1,2 +1,2 @@
-# myfirstgithub
-TestForGit
+# 内因努力,外缘随缘
+# 看NodeJS已经有一段时间了,那别光看,不做.网上资源很多,动手吧
