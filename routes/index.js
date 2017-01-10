@@ -14,7 +14,7 @@ module.exports = function(app){
 	});
 
 	app.use(function(req,res){
-		console.log('未找到路由');
+		console.log('未找到路由: ' + req.path);
 		res.send('404');
 	});
 	app.use(function(err,req,res){
