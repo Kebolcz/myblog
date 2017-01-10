@@ -47,3 +47,38 @@
 
 	Express中app.set(name,value).
 	Assigns setting name to value, where name is one of the properties from the app settings table.
+
+8.mongodb
+	which mongod	
+	mkdir -p /data/db
+	df -lh   //view the rest store
+	mkdir -p /data/db   //create direction level by level
+	mongod --dbpath=/data/db --port=27017   //create an service to run mongoDB
+	mongod --dbpath=/data/db --port=27017 --fork --syslog
+	mongod --shutdown           
+	mongod --dbpath=/data/db --port=27017 --fork --logpath=/var/log/mongd.log     //create an service and log a non-sys log
+	mongo    //connect to the mongoDB shell
+	show dbs   
+	show collections
+	use part9   //switch a fork to do some intersting thing 
+	db.users.insert({"username":"Sid"});
+	db.users.find()
+	db.user.insert("username":"Zoe","group":"reporter")
+	db.users.update({"username":"kebo"},{$set:{"wife":"angry girl"}});
+	db.users.update({"username":"kebo"},{$set:{"wife":"angry girl"}},{multi:true});   //multiplex update
+	db.user.drop()
+	db.users.remove({"fork":"multi"},true)   //remove the first line which is matching
+	db.users.remove({"fork":"multi"})    //remove all the lines that matched
+
+
+
+	使用mongoose模块操作MongoDB
+
+	mongoose  将nodejs的对象和mongoDB的集合一一对应
+
+	cnpm install mongoose    
+
+
+	Model  &&  Schema
+	see /home/hello/mongoose/**.js
+
