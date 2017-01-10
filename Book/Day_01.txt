@@ -22,3 +22,7 @@
 		n:	express-winston: 基于 winston 的用于 express 的日志中间件
 4.中间件config-lite是轻量的读取配置文件的模板.
 	NODE_ENV=test node app.js启动程序,则通过 require('config-lite') 会依次降级查找 config/test.js、config/test.json、config/test.node、config/test.yml、config/test.yaml 并合并 default 配置.
+5.module.exports(function(args){});用于JS抛出一个function
+	var routes = require('./router');这种方式的引入,似乎默认的起始文件就是index.js.
+	var app = requeire('express')();
+	routes(app);
