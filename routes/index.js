@@ -14,11 +14,13 @@ module.exports = function(app){
 	});
 
 	app.use(function(req,res){
-		console.log('未找到路由: ' + req.path);
-		res.send('404');
+		if (!res.headersSent) {
+			console.log('未找到路由: ' + req.path);
+			res.status(404).send('404');
+		}
 	});
-	app.use(function(err,req,res){
+	app.use(function(err,req,res,next){
 		console.log('服务器内部错误: '+ err);
-		res.send('500');
+		res.status(500).send('500');
 	});
 };

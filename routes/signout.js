@@ -5,7 +5,7 @@ var checkLogin = require('../middlewares/check.js').checkLogin;
 
 router.get('/',checkLogin,function(req,res,next){
 	req.session.user = null;
-	req.flash('info','login out seccessful.');
+	req.flash('success','Login out seccessful.');
 	res.redirect('/posts');
 });
 

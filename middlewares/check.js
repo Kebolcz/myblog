@@ -1,7 +1,7 @@
 module.exports = {
 	checkLogin : function(req,res,next){
 		if(!req.session.user){
-			req.flash('info','not login in');
+			req.flash('error','not login in');
 			return res.redirect('/signin');
 		}
 		next();
@@ -9,7 +9,7 @@ module.exports = {
 
 	checkNotLogin : function(req,res,next){
 		if(req.session.user){
-			req.flash('info','already login on');
+			req.flash('error','already login on');
 			return res.redirect('back');
 		}
 		next();
